@@ -1,0 +1,31 @@
+<h1> New Article</h1>
+<fieldset *ngIf="!isUpdating">
+    <legend>Add a Article</legend>
+    <form (submit)="addArticle()">
+      <div>
+        <p>
+          <label>Article Title:</label> 
+          <input type="text" name="newArticle.title" [(ngModel)]="newArticle.title">
+          <span *ngIf="errors.title">{{ errors.title.message }}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <label>Article Content:</label> 
+          <input type="text" name="newArticle.content" [(ngModel)]="newArticle.content">
+          <span *ngIf="errors.content">{{ errors.content.message }}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <label>Slug:</label> 
+          <input type = "text" name="newArticle.slug" [(ngModel)]="newArticle.slug">
+          <span *ngIf="errors.slug">{{ errors.slug.message}}  </span>
+        </p>
+      </div>
+    
+      <p>
+          <input type="submit" value="Add Article"> <button class="right" [routerLink]="['/']">Cancel</button> </p>
+      
+    </form>
+  </fieldset>

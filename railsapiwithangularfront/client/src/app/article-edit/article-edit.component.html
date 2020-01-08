@@ -1,0 +1,32 @@
+<p>article-edit works!</p>
+<fieldset>
+    <legend>Edit this article</legend>
+    <form (submit)="updateArticle(oneArticle.id)">
+      <div>
+        <p>
+          Title: {{oneArticle.title}}
+          
+        </p>
+      </div>
+      <div>
+        <p>
+          Content: 
+          <input type="text" name="oneArticle.Content" [(ngModel)]="oneArticle.content">
+          <span *ngIf="error2s.content">{{ error2s.content.message }}</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          Slug: 
+          <input type="text" name="oneArticle.slug" [(ngModel)]="oneArticle.slug">
+          <span *ngIf="error2s.slug">{{ error2s.slug.message }}</span>
+        </p>
+      </div>
+
+      <p>
+        <input type="submit" value="Save Article">
+        <button class="right" [routerLink]="['/']">Cancel</button>
+      </p>
+    </form>
+  </fieldset>
+

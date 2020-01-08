@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1> Post for Author <%= @post.author.name %>     </h1>
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @post.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path(:author_id => @post.author_id, :author_name => @post.author.name) %>

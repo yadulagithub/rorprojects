@@ -1,0 +1,25 @@
+
+
+<p>article-detail works!</p>
+<h1>Show Article</h1>
+<fieldset *ngIf="!isUpdating">
+    <legend>Article Detail</legend>
+    <form (submit)="getArticle(oneArticle.id)">
+      <div>
+        <p> Article Title: {{oneArticle.title}}</p>
+      </div>
+      <div>
+        <p> Article Content: {{oneArticle.content}}</p>
+      </div>
+      <div>
+        <p> Article Slug: {{oneArticle.slug}}</p>
+      </div>
+      <div class="container">
+        <div>   
+            <button type = "button"  class = "right" (click)="delArticle(oneArticle.id)">Delete article</button>
+            <button type = "button" class = "right" [routerLink]="['/']">Home</button>
+        </div>
+      </div>
+      
+    </form>
+  </fieldset>
