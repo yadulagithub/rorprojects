@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<h1>Comments for </h1>
+<h2> Author : <%= @comment.post.author.name %> </h2>
+
+<h2> Post : <%= @comment.post.title %> </h2>
+
+<p>
+  <strong>Body:</strong>
+  <%= @comment.body %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path(:post_id=> @comment.post.id,:post_title => @comment.post.title) %>
