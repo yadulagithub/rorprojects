@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Comments</h1>
-<h1> Comments for Post  <%= params[:post_title] %>  </h1>
+<h2> Author : <%=  @post.author.name %>  </h2>
+<h2> Post : <%= params[:post_title] %>  </h2>
+
 
 <table>
   <thead>
@@ -14,13 +16,11 @@
 
   <tbody>
     <% @comments.each do |comment| %>
-      <h1>Post : <%= comment.post.title %></h1>
       <tr>
         <td><%= comment.body %></td>
         <td><%= link_to 'Show', comment %></td>
         <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
         <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        
       </tr>
     <% end %>
   </tbody>
@@ -31,7 +31,7 @@
 <%= link_to 'New Comment', new_comment_path %>
 <br>
 <br>
-<%= link_to 'Back to Posts', posts_path %>
+<%= link_to 'Back to Posts', posts_path(:author_id =>@post.author.id, :author_name => @post.author.name) %>
 <br>
 <br>
 <%= link_to 'Back to Authors', authors_path %>

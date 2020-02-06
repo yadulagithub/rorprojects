@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<h1> Posts for Author  <%= params[:author_name] %>  </h1>
+<h1>Posts for Author : <%= params[:author_name] %>  </h1>
 
 <table>
   <thead>
@@ -28,7 +27,7 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path(:author_id => params[:author_id] ) %>
 <br>
 <br>
 <%= link_to 'Back to Author', authors_path %>

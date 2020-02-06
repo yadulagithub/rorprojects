@@ -12,12 +12,9 @@
   <% end %>
 
   <%= form.hidden_field :post_id, value: @comment.post_id %>
-  <div>
-  <strong> Comment for post </strong>
-  <%= @comment.post.title %>
-  
-  </div>
-
+  <h2>   Post:   <%= @comment.post.title %></h2>
+  <h2> Author:  <%= @comment.post.author.name %></h2>
+  </br> 
 
   <div class="field">
     <%= form.label :body %>
